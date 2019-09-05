@@ -1,0 +1,1073 @@
+$txt-color: #ff7f00;
+$bg-color: #f7f7f7;
+$browser-default-font-size: 75px !default;
+;
+@function pr($px) {
+  @return $px / $browser-default-font-size * 1rem;
+}
+
+$padding-size: pr(20px);
+
+input[type="text"],
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none; // 去除safari浏览器的内阴影
+  &::-webkit-input-placeholder {
+    color: #888;
+    font-size: inherit;
+}
+  &:-moz-placeholder {
+    color: #888;
+    font-size: inherit;
+}
+  &::-moz-placeholder {
+    color: #888;
+    font-size: inherit;
+}
+  &:-ms-input-placeholder {
+    color: #888;
+    font-size: inherit;
+}
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+input, textarea, select {
+  background-color: transparent;
+  font-family: '微软雅黑';
+}
+
+select {
+  border: none;
+}
+
+option {
+  text-indent: 1em;
+  font-family: '微软雅黑';
+}
+
+input[type='text'] {
+  border: none;
+  text-indent: 1em;
+}
+
+%one {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+%in-b {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+}
+
+%clearfix {
+  zoom: 1;
+  &:after {
+    clear: both;
+}
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+}
+}
+
+
+/* 招生简章 */
+.recruit{
+  width: 750px;
+  margin: 0 auto;
+  .title-module{
+    font-size: 22px;
+    font-weight: bold;
+    height: 42px;
+    line-height: 42px;
+    color: #444444;
+    text-align: center;
+    border-bottom: 2px solid #eeeeee;
+    box-sizing: border-box;
+    span{
+      @extend %in-b;
+      height: 42px;
+      line-height: 42px;
+      border-bottom: 2px solid #ff7f00;
+      box-sizing: border-box;
+
+    }
+    .icon{
+      @extend %in-b;
+      width: 14px;
+      height: 13px;
+    }
+
+    .left-icon{
+      background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/title-left_1.png") no-repeat;
+      margin-right: 10px;
+    }
+    .right-icon{
+      background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/title-right_1.png") no-repeat;
+      margin-left: 10px;
+    }
+  }
+  .btn-module{
+    padding-top: 10px;
+    a{
+      @extend %in-b;
+      width: 103px;
+      height: 32px;
+      line-height: 32px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #ffffff;
+      text-align: center;
+      &:first-child{
+        background-image: linear-gradient(-22deg,
+            #ff7f00 0%,
+            #ff9865 100%);
+        margin-right: 12px;
+      }
+      &:nth-of-type(2){
+        background-image: linear-gradient(-22deg,
+            #266ed1 0%,
+            #518ee2 100%);
+      }
+      &.has-before{
+        position: relative;
+        padding-left: 33px;
+        text-align: left;
+        box-sizing: border-box;
+        &:before{
+          @extend %in-b;
+          content: '';
+          width: 14px;
+          height: 13px;
+          background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/icon_1.png") no-repeat;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 17px;
+          margin: auto;
+        }
+      }
+    }
+  }
+  .courses{
+    li{
+      @extend %clearfix;
+      padding-top: 28px;
+      margin-bottom: 7px;
+    }
+    .course-bg{
+      float: left;
+      margin-right: 23px;
+    }
+    .detail{
+      float: left;
+      width: 482px;
+      .detail-title{
+        @extend %in-b;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 24px;
+        color: #444444;
+        margin-bottom: 10px;
+        &:hover{
+          color: $txt-color;
+        }
+      }
+      .text{
+        font-size: 14px;
+        line-height: 24px;
+        color: #666666;
+
+        overflow:hidden;
+        text-overflow:ellipsis;
+        display:-webkit-box;
+        -webkit-box-orient:vertical;
+        -webkit-line-clamp:3;
+      }
+    }
+  }
+  .schools{
+    padding-top: 45px;
+    margin-bottom: 30px;
+    ul{
+      @extend %clearfix;
+      margin-right: -18px;
+    }
+    li{
+      float: left;
+      width: 240px;
+      //height: 243px;
+      background-color: #ffffff;
+      border-radius: 4px;
+      border: solid 1px #e6e6e6;
+      padding-bottom: 19px;
+      box-sizing: border-box;
+      text-align: center;
+      margin-right: 16px;
+      margin-bottom: 16px;
+      .school-bg{
+        height: 70px;
+        position: relative;
+        img{
+          width: 175px;
+          height: 45px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+      .school-title{
+        height: 31px;
+        line-height: 30px;
+        background-color: #89b1e9;
+        font-size: 16px;
+        color: #ffffff;
+      }
+      .detail{
+        padding: 10px 15px 0;
+        p{
+          text-align: left;
+          font-size: 14px;
+          line-height: 24px;
+          color: #444444;
+        }
+      }
+      .btn-module{
+        a{
+          &:nth-of-type(2){
+            background-image: none;
+            span{
+              color: $txt-color;
+              border-bottom: 1px solid $txt-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  .pc-hide{
+    display: none;
+  }
+  .wap-hide{
+    display: block;
+  }
+}
+
+/* 热门机构推荐 */
+.hot-organs{
+  width: 750px;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 72px;
+  .title-module{
+    font-size: 22px;
+    font-weight: bold;
+    height: 42px;
+    line-height: 42px;
+    color: #444444;
+    text-align: center;
+    border-bottom: 2px solid #eeeeee;
+    box-sizing: border-box;
+    border-bottom: 0;
+    margin-bottom: 20px;
+    span{
+      @extend %in-b;
+      height: 42px;
+      line-height: 42px;
+      //border-bottom: 2px solid #ff7f00;
+      box-sizing: border-box;
+      border-bottom: 0;
+    }
+    .icon{
+      @extend %in-b;
+      width: 79px;
+      height: 15px;
+    }
+
+    .left-icon{
+      background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/title-left_2.png") no-repeat;
+      margin-right: 10px;
+    }
+    .right-icon{
+      background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/title-right_2.png") no-repeat;
+      margin-left: 10px;
+    }
+  }
+  .btn-module{
+    padding-top: 10px;
+    a{
+      @extend %in-b;
+      width: 103px;
+      height: 32px;
+      line-height: 32px;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #ffffff;
+      text-align: center;
+      &:first-child{
+        background-image: linear-gradient(-22deg,
+            #ff7f00 0%,
+            #ff9865 100%);
+        margin-right: 12px;
+      }
+      &:nth-of-type(2){
+        background-image: linear-gradient(-22deg,
+            #266ed1 0%,
+            #518ee2 100%);
+      }
+      &.has-before{
+        position: relative;
+        padding-left: 33px;
+        text-align: left;
+        box-sizing: border-box;
+        &:before{
+          @extend %in-b;
+          content: '';
+          width: 14px;
+          height: 13px;
+          background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/icon_1.png") no-repeat;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 17px;
+          margin: auto;
+        }
+      }
+    }
+  }
+  .organ{
+    //width: 708px;
+    height: 284px;
+    background-color: #ffffff;
+    border-radius: 9px;
+    padding: 4px 0 6px;
+    box-sizing: border-box;
+    margin-bottom: 19px;
+    .organ-l{
+      float: left;
+      width: 194px;
+      height: 100%;
+      padding-top: 14px;
+      border-right: 4px solid #f7f7f7;
+      box-sizing: border-box;
+      text-align: center;
+      .promote{
+        margin-left: -40px;
+        margin-bottom: 24px;
+      }
+      .l-title{
+        font-size: 20px;
+        line-height: 21px;
+        color: #444444;
+      }
+      .praise{
+        padding-top: 32px;
+        .icon{
+          @extend %in-b;
+          width: 16px;
+          height: 17px;
+          background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/icon_3.png") no-repeat;
+          background-size: 100% 100%;
+        }
+        p{
+          font-size: 14px;
+          line-height: 21px;
+          color: #999999;
+        }
+      }
+    }
+    .organ-r{
+      float: left;
+      width: 510px;
+      padding-top: 20px;
+      padding-left: 18px;
+      padding-right: 20px;
+      box-sizing: border-box;
+      text-align: center;
+      .r-feature{
+        text-align: left;
+        span{
+          @extend %in-b;
+          width: 100px;
+          height: 33px;
+          line-height: 33px;
+          background-color: #ffffff;
+          border-radius: 15px;
+          border: solid 1px #ff7f00;
+          font-size: 16px;
+          color: #ff7f00;
+          margin-right: 12px;
+          text-align: center;
+        }
+
+      }
+      .detail{
+        li{
+          font-size: 14px;
+          line-height: 21px;
+          color: #666666;
+          text-align: left;
+          padding-top: 22px;
+          @extend %clearfix;
+          &:before{
+            @extend %in-b;
+            content: '';
+            width: 7px;
+            height: 7px;
+            border: solid 2px #ff7f00;
+            box-sizing: border-box;
+            border-radius: 100%;
+            margin-right: 6px;
+            float: left;
+            margin-top: 8px;
+          }
+          span{
+            @extend %in-b;
+            float: left;
+            width: 458px;
+          }
+        }
+      }
+      .btn-module{
+        text-align: left;
+        a{
+          box-shadow: inset 0px 8px 21px 6px
+          rgba(255, 244, 229, 0.35);
+          background-image: none;
+          background-color: #f7f7f7;
+          color: $txt-color;
+          .icon{
+            width: 13px;
+            height: 14px;
+            margin-right: 5px;
+          }
+          span{
+            border-bottom: 1px solid $txt-color;
+          }
+          &:first-child{
+            width: 125px;
+            &:before{
+              left: 12px;
+              background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/icon_4.png") no-repeat;
+            }
+          }
+          &:nth-of-type(2){
+            &:before{
+              left: 15px;
+              background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/icon_5.png") no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+  .organ-btn{
+    @extend %in-b;
+    width: 208px;
+    height: 44px;
+    line-height: 44px;
+    background-image: linear-gradient(-22deg,
+    #ff7f00 0%,
+    #ff9865 100%);
+    box-shadow: 0px 2px 8px 0px
+    rgba(255, 127, 0, 0.3);
+    border-radius: 20px;
+    font-size: 16px;
+    color: #ffffff;
+    position: relative;
+    padding-left: 63px;
+    box-sizing: border-box;
+    text-align: left;
+    &:before{
+      @extend %in-b;
+      content: '';
+      width: 16px;
+      height: 15px;
+      background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/icon_6.png") no-repeat;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 42px;
+      margin: auto;
+    }
+  }
+  .pc-hide{
+    display: none;
+  }
+  .wap-hide{
+    display: block;
+  }
+}
+
+/* 预约看校 */
+.appoint{
+  //width: 750px;
+  margin: 0 auto 20px;
+  height: 102px;
+  background-color: #ffffff;
+  border: solid 1px #e6e6e6;
+  padding: 18px 26px 19px;
+  box-sizing: border-box;
+  position: relative;
+  @extend %clearfix;
+  .appoint-school{
+    border-right: 1px dashed #808080;
+    float: left;
+    padding-right: 24px;
+    margin-right: 28px;
+  }
+  .detail{
+    .detail-title{
+      font-size: 20px;
+      line-height: 30px;
+      color: #333333;
+    }
+    .detail-text{
+      font-size: 14px;
+      line-height: 30px;
+      color: #777777;
+    }
+  }
+  .appoint-btn{
+    position: absolute;
+    top: 14px;
+    right: 0;
+    width: 114px;
+    height: 32px;
+    line-height: 32px;
+    background-image: linear-gradient(-22deg,
+    #ff7f00 0%,
+    #ff9865 100%);
+    border-radius: 14px 0px 0px 14px;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+  }
+  .pc-hide{
+    display: none;
+  }
+  .wap-hide{
+    display: block;
+  }
+}
+
+@media screen and (max-width:750px) {
+  // 去除前后伪类
+  %clearclass {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  body, div, a, p, span, ul, li, input {
+    box-sizing: border-box;
+  }
+
+  /* 招生简章 */
+  .recruit{
+    width: 100%;
+    padding: 0 pr(28px);
+    .title-module{
+      font-size: pr(34px);
+      font-weight: bold;
+      height: pr(94px);
+      line-height: pr(94px);
+      color: #444444;
+      text-align: center;
+      border-bottom: 2px solid #eeeeee;
+      box-sizing: border-box;
+      span{
+        //@extend %in-b;
+        height: pr(94px);
+        line-height: pr(94px);
+        border-bottom: pr(2px) solid #ff7f00;
+        box-sizing: border-box;
+
+      }
+      .icon{
+        //@extend %in-b;
+        width: pr(20px);
+        height: pr(19px);
+      }
+
+      .left-icon{
+        background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/title-left_1.png") no-repeat;
+        margin-right: pr(9px);
+        background-size: 100% 100%;
+      }
+      .right-icon{
+        background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/title-right_1.png") no-repeat;
+        margin-left: pr(9px);
+        background-size: 100% 100%;
+      }
+    }
+    .btn-module{
+      padding-top: 10px;
+      display: flex;
+      justify-content: center;
+      a{
+        width: pr(332px);
+        height: pr(60px);
+        line-height: pr(60px);
+        border-radius: pr(4px);
+        font-size: pr(24px);
+        color: #ffffff;
+        text-align: center;
+        &:first-child{
+          margin-right: pr(17px);
+          background-image: linear-gradient(-22deg,
+              #ff7f00 0%,
+              #ff9865 100%);
+        }
+        &:nth-of-type(2){
+          background-image: linear-gradient(-22deg,
+              #266ed1 0%,
+              #518ee2 100%);
+        }
+        &.has-before{
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          padding-left: 0;
+          &:before{
+            position: static;
+            content: '';
+            width: pr(26px);
+            height: pr(24px);
+            background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/icon_1.png") no-repeat;
+            background-size: 100% 100%;
+            margin: 0;
+          }
+        }
+      }
+    }
+    .courses{
+      li{
+        //@extend %clearfix;
+        padding-top: pr(30px);
+        margin-bottom: pr(10px);
+      }
+      .course-bg{
+        width: pr(310px);
+        height: pr(214px);
+        float: left;
+        margin-right: pr(26px);
+      }
+      .detail{
+        float: left;
+        width: pr(341px);
+        .detail-title{
+          //@extend %in-b;
+          font-weight: bold;
+          color: #444444;
+          font-size: pr(28px);
+          line-height: pr(46px);
+          &:hover{
+            color: $txt-color;
+          }
+        }
+        .text{
+          color: #666666;
+          font-size: pr(24px);
+          line-height: pr(36px);
+
+          overflow:hidden;
+          text-overflow:ellipsis;
+          display:-webkit-box;
+          -webkit-box-orient:vertical;
+          -webkit-line-clamp:3;
+        }
+      }
+      .btn-module{
+        clear: both;
+        &.wap-hide{
+          display: none;
+        }
+      }
+    }
+    .schools{
+      padding-top: pr(50px);
+      margin-bottom: pr(30px);
+      ul{
+        @extend %clearclass;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: pr(23px);
+        grid-row-gap: pr(23px);
+        margin-right: 0;
+      }
+      li{
+        width: pr(347px);
+        height: pr(421px);
+        background-color: #ffffff;
+        border-radius: pr(4px);
+        border: solid 1px #e6e6e6;
+        padding-bottom: pr(30px);
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 0;
+        position: relative;
+        .school-bg{
+          width: 100%;
+          height: pr(101px);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img{
+            width: pr(253px);
+            height: pr(65px);
+          }
+        }
+        .school-title{
+          height: pr(51px);
+          line-height: pr(50px);
+          background-color: #89b1e9;
+          color: #ffffff;
+          font-size: pr(26px);
+        }
+        .detail{
+          padding: pr(20px) pr(24px) 0;
+          p{
+            text-align: left;
+            font-size: pr(26px);
+            line-height: pr(36px);
+            color: #333333;
+            span{
+              color: #666666;
+            }
+          }
+        }
+        .btn-module{
+          position: absolute;
+          bottom: pr(30px);
+          a{
+            width: pr(152px);
+            height: pr(49px);
+            line-height: pr(49px);
+            span{
+              height: pr(49px);
+              line-height: pr(49px);
+              font-size: pr(22px);
+            }
+            &:nth-of-type(2){
+              background-image: none;
+              span{
+                color: $txt-color;
+                border-bottom: 1px solid $txt-color;
+              }
+            }
+          }
+        }
+      }
+    }
+    .pc-hide{
+      display: flex;
+    }
+    .wap-hide{
+      display: none;
+    }
+  }
+
+  /* 热门机构推荐 */
+  .hot-organs{
+    width: 100%;
+    background-color: #f7f7f7;
+    padding: pr(20px) pr(20px);
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: pr(70px);
+    .title-module{
+      font-size: pr(34px);
+      font-weight: bold;
+      height: pr(94px);
+      line-height: pr(94px);
+      color: #444444;
+      text-align: center;
+      border-bottom: 0;
+      margin-bottom: pr(20px);
+      span{
+        height: pr(94px);
+        line-height: pr(94px);
+        border-bottom: 0;
+      }
+      .icon{
+        width: pr(79px);
+        height: pr(15px);
+        background-size: 100% 100%;
+      }
+
+      .left-icon{
+        background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/title-left_2.png") no-repeat;
+        margin-right: pr(9px);
+        background-size: 100% 100%;
+      }
+      .right-icon{
+        background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/title-right_2.png") no-repeat;
+        margin-left: pr(9px);
+        background-size: 100% 100%;
+      }
+    }
+    .organ{
+      width: pr(708px);
+      height: pr(539px);
+      background-color: #ffffff;
+      border-radius: pr(9px);
+      .organ-l{
+        width: 100%;
+        height: pr(112px);
+        padding-top: pr(32px);
+        border-bottom: pr(4px) solid #f7f7f7;
+        box-sizing: border-box;
+        text-align: center;
+        //@extend %clearfix;
+        .promote{
+          width: pr(264px);
+          height: pr(67px);
+          margin-left: pr(-7px);
+          float: left;
+          margin-bottom: pr(13px);
+        }
+        .organ-l-bg{
+          width: pr(179px);
+          height: pr(67px);
+          float: left;
+          border-right: 1px solid #dfdfdf;
+          margin-right: pr(13px);
+          margin-bottom: pr(15px);
+        }
+        .l-detail{
+          float: right;
+          .l-title{
+            color: #444444;
+
+            //width: pr(250px);
+            text-align: left;
+
+            font-size: pr(26px);
+            line-height: pr(26px);
+          }
+          .praise{
+            padding-top: pr(7px);
+            .icon{
+              //@extend %in-b;
+              width: pr(17px);
+              height: pr(19px);
+              background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/icon_3.png") no-repeat;
+              background-size: 100% 100%;
+            }
+            p{
+              float: left;
+              font-size: pr(22px);
+              line-height: pr(22px);
+              color: #ff8d4e;
+              margin-right: pr(15px);
+            }
+          }
+        }
+      }
+      .organ-r{
+        width: 100%;
+        height: pr(423px);
+        padding-top: pr(22px);
+        padding-left: pr(17px);
+        padding-right: pr(17px);
+        box-sizing: border-box;
+        text-align: center;
+        .r-feature{
+          text-align: left;
+          span{
+            //@extend %in-b;
+            background-color: #ffffff;
+            border: solid 1px #ff7f00;
+            font-size: pr(24px);
+            color: #ff7f00;
+            margin-right: pr(15px);
+            text-align: center;
+
+            width: pr(145px);
+            height: pr(48px);
+            line-height: pr(48px);
+            border-radius: pr(24px);
+          }
+
+        }
+        .detail{
+          li{
+            color: #666666;
+            text-align: left;
+            padding-top: pr(20px);
+            font-size: pr(24px);
+            line-height: pr(31px);
+            &:before{
+              content: '';
+              width: pr(14px);
+              height: pr(14px);
+              border: solid pr(2px) #ff7f00;
+              box-sizing: border-box;
+              border-radius: 100%;
+              margin-right: pr(5px);
+              float: left;
+              margin-top: pr(8px);
+            }
+            span{
+              //@extend %in-b;
+              float: left;
+              width: pr(648px);
+            }
+          }
+        }
+        .btn-module{
+          display: flex;
+          justify-content: center;
+          a{
+            background-image: none;
+            background-color: #f7f7f7;
+            color: $txt-color;
+            height: pr(56px);
+            line-height: pr(56px);
+            box-shadow: inset 0px pr(8px) pr(21px) pr(6px)
+            rgba(255, 244, 229, 0.35);
+            border-radius: pr(4px);
+            font-size: pr(22px);
+            span{
+              border-bottom: 1px solid $txt-color;
+              line-height: pr(24px);
+            }
+            &:first-child{
+              width: pr(214px);
+              &:before{
+                width: pr(22px);
+                height: pr(24px);
+                background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/icon_4.png") no-repeat;
+                margin-right: pr(10px);
+              }
+            }
+            &:nth-of-type(2){
+              width: pr(175px);
+              &:before{
+                width: pr(22px);
+                height: pr(24px);
+                background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/icon_5.png") no-repeat;
+                margin-right: pr(10px);
+              }
+            }
+          }
+        }
+      }
+    }
+    .organ-btn{
+      position: static;
+      padding-left: 0;
+      line-height: pr(72px);
+      background-image: linear-gradient(-22deg,
+          #ff7f00 0%,
+          #ff9865 100%);
+      font-size: pr(26px);
+      color: #ffffff;
+      width: pr(340px);
+      height: pr(72px);
+      box-shadow: 0px pr(2px) pr(8px) 0px
+      rgba(255, 127, 0, 0.3);
+      border-radius: pr(36px);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: pr(33px);
+      &:before{
+        //@extend %in-b;
+        content: '';
+        width: pr(26px);
+        height: pr(25px);
+        background: url("https://img.thea.cn/jingjia/public/201909/hbj/gjxx-lcm-pc/images/icon_6.png") no-repeat;
+        background-size: 100% 100%;
+        margin-right: pr(8px);
+      }
+    }
+    .pc-hide{
+      display: block;
+    }
+    .wap-hide{
+      display: none;
+    }
+  }
+
+  /* 预约看校 */
+  .appoint{
+    width: 100%;
+    height: pr(165px);
+    background-color: #ffffff;
+    border: solid 1px #e6e6e6;
+    padding: pr(20px);
+    box-sizing: border-box;
+    margin-bottom: pr(20px);
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    .appoint-school{
+      border-right: 1px dashed #808080;
+      //float: left;
+      padding-right: pr(20px);
+      margin-right: pr(20px);
+      float: none;
+      img{
+        width: pr(209px);
+        height: pr(79px);
+      }
+      .appoint-btn{
+        position: static;
+        display: block;
+        margin: 0 auto;
+        line-height: pr(44px);
+        background-image: linear-gradient(-22deg,
+            #ff7f00 0%,
+            #ff9865 100%);
+        font-size: pr(24px);
+        color: #ffffff;
+        text-align: center;
+
+        width: pr(195px);
+        height: pr(44px);
+        border-radius: pr(22px);
+      }
+    }
+    .detail{
+      float: none;
+      width: pr(416px);
+
+      .detail-title{
+        font-size: pr(28px);
+        line-height: pr(30px);
+      }
+      .detail-text{
+        font-size: pr(24px);
+        line-height: pr(46px);
+        color: #777777
+      }
+    }
+
+    .pc-hide{
+      display: block;
+    }
+    .wap-hide{
+      display: none;
+    }
+  }
+}
